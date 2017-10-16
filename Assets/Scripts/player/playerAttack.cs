@@ -2,17 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchTest : MonoBehaviour {
+public class playerAttack : MonoBehaviour {
+	private bool moving;
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.touchCount > 0) {
-			Debug.Log (Input.GetTouch (0).position);
+		
+	}
+
+	void OnTriggerEnter2D (Collider2D col){
+		if (col.gameObject.tag == "enemy") {
+			Destroy (col.gameObject);
 		}
 	}
 }

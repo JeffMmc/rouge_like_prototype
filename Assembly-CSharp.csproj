@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{3DE6B712-C041-304A-4DD2-8B54F9F2041E}</ProjectGuid>
+    <ProjectGuid>{35227DC8-6798-9052-881C-415908D41817}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -46,9 +46,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Swipe.cs" />
-     <Compile Include="Assets\Scripts\SwipeTest.cs" />
-     <Compile Include="Assets\Scripts\TouchTest.cs" />
+     <Compile Include="Assets\Scripts\enemyMove.cs" />
+     <Compile Include="Assets\Scripts\player\SwipeTest.cs" />
+     <Compile Include="Assets\Scripts\player\playerAttack.cs" />
+     <Compile Include="Assets\Scripts\player\playerMove.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

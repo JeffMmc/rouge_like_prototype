@@ -3,23 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SwipeTest : MonoBehaviour {
-	public Swipe swipeControls;
+	public playerMove swipeControls;
 	public Transform player;
 	private Vector3 desiredPosition;
 	
 	// Update is called once per frame
 	void Update () {
+		int diagonal = 0; 
+		float moveDistance = 2f;
+		//Check diagonal move
 		if (swipeControls.SwipeLeft) {
-			desiredPosition += Vector3.left;
+			diagonal++;
 		}
 		if (swipeControls.SwipeRight) {
-			desiredPosition += Vector3.right;
+			diagonal++;
 		}
 		if (swipeControls.SwipeUp) {
-			desiredPosition += Vector3.up;
+			diagonal++;
 		}
 		if (swipeControls.SwipeDown) {
-			desiredPosition += Vector3.down;
+			diagonal++;
+		}
+
+		if (diagonal == 2) {
+			moveDistance = 1.4f;
+		}
+
+		if (swipeControls.SwipeLeft) {
+			desiredPosition.x -= moveDistance * swipeControls.ChargeRate;
+		}
+		if (swipeControls.SwipeRight) {
+			desiredPosition.x += moveDistance * swipeControls.ChargeRate;
+		}
+		if (swipeControls.SwipeUp) {
+			desiredPosition.y += moveDistance * swipeControls.ChargeRate;
+		}
+		if (swipeControls.SwipeDown) {
+			desiredPosition.y -= moveDistance * swipeControls.ChargeRate;
 		}
 
 		float targetX = player.transform.position.x + swipeControls.DeltaX;
