@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerMove : MonoBehaviour {
+public class PlayerMove : MonoBehaviour {
 
 	private bool tap, swipeLeft, swipeRight, swipeUp, swipeDown;
 	private float deltaX, deltaY;

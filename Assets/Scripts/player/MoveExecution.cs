@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwipeTest : MonoBehaviour {
-	public playerMove swipeControls;
+public class MoveExecution : MonoBehaviour {
+	public PlayerMove swipeControls;
 	public Transform player;
 	private Vector3 desiredPosition;
 	
