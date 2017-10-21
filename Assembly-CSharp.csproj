@@ -46,10 +46,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\CameraShake.cs" />
      <Compile Include="Assets\Scripts\CompleteCameraController.cs" />
      <Compile Include="Assets\Scripts\EnemyMove.cs" />
      <Compile Include="Assets\Scripts\Exit.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
+     <Compile Include="Assets\Scripts\health_item.cs" />
      <Compile Include="Assets\Scripts\player\MoveExecution.cs" />
      <Compile Include="Assets\Scripts\player\PlayerAttack.cs" />
      <Compile Include="Assets\Scripts\player\PlayerHealth.cs" />

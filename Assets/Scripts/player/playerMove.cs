@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour {
 	private float deltaX, deltaY;
 	private bool isDraging = false;
 	private Vector2 startTouch, swipeDelta;
-	private float holdTime = 0.8f;
+	private float holdTime = 0.2f;
 	private float acumTime = 0;
 	private float chargeRate = 0;
 
@@ -41,6 +41,7 @@ public class PlayerMove : MonoBehaviour {
 					charge.text = Mathf.Round (chargeRate * 100) + "%";
 					player.GetComponent<SpriteRenderer> ().color = Color.white;
 				} else {
+					GameObject.Find ("player").GetComponent<PlayerHealth> ().takeDamage (10);
 					Reset ();
 				}
 

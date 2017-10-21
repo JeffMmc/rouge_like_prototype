@@ -10,7 +10,7 @@ public class MoveExecution : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int diagonal = 0; 
-		float moveDistance = 3f;
+		float moveDistance = 5f;
 		//Check diagonal move
 		if (swipeControls.SwipeLeft) {
 			diagonal++;
@@ -26,7 +26,7 @@ public class MoveExecution : MonoBehaviour {
 		}
 
 		if (diagonal == 2) {
-			moveDistance = 2.1f;
+			moveDistance = 3.5f;
 		}
 
 		if (swipeControls.SwipeLeft) {

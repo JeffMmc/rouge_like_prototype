@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour {
 		healthBar.text = "Health : " + health;
 	}
 
-	void takeDamage(int damage){
+	public void takeDamage(int damage){
 		if (health - damage < 0) {
 			health = 0;
 		} else {
@@ -27,7 +27,7 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
-	void recovery(int recovery){
+	public void recovery(int recovery){
 		if (health + recovery > 100) {
 			health = 100;
 		} else {
