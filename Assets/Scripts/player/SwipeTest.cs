@@ -10,7 +10,7 @@ public class SwipeTest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		int diagonal = 0; 
-		float moveDistance = 2f;
+		float moveDistance = 3f;
 		//Check diagonal move
 		if (swipeControls.SwipeLeft) {
 			diagonal++;
@@ -26,7 +26,7 @@ public class SwipeTest : MonoBehaviour {
 		}
 
 		if (diagonal == 2) {
-			moveDistance = 1.4f;
+			moveDistance = 2.1f;
 		}
 
 		if (swipeControls.SwipeLeft) {

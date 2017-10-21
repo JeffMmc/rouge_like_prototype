@@ -15,6 +15,8 @@ public class playerMove : MonoBehaviour {
 
 	public Text charge;
 	public Transform player;
+	public GameObject directionPad;
+	private GameObject runtimeDirectionPad;
 
 	public Vector2 SwipeDelta {get {return swipeDelta;}}
 	public bool Tap {get {return tap;}}
@@ -34,9 +36,8 @@ public class playerMove : MonoBehaviour {
 			acumTime += Input.GetTouch (0).deltaTime;
 			if (acumTime >= holdTime) {
 				//Holding
-				Debug.Log(acumTime);
-				if (acumTime < 5f) {
-					chargeRate = acumTime/ 5f;
+				if (acumTime < 3f) {
+					chargeRate = acumTime/ 3f;
 					charge.text = Mathf.Round (chargeRate * 100) + "%";
 					player.GetComponent<SpriteRenderer> ().color = Color.white;
 				} else {
@@ -49,8 +50,13 @@ public class playerMove : MonoBehaviour {
 				tap = true;
 				isDraging = true;
 				startTouch = Input.touches [0].position;
+				Vector3 fingerpos = Input.GetTouch (0).position;
+				fingerpos.z = 5;
+				Vector3 objPos = Camera.main.ScreenToWorldPoint (fingerpos);
+				runtimeDirectionPad = Instantiate (directionPad, objPos, Quaternion.identity);
 			}else if(Input.touches[0].phase == TouchPhase.Ended || Input.touches[0].phase == TouchPhase.Canceled){
 				isDraging = false;
+				Destroy (runtimeDirectionPad);
 				Reset ();
 			}
 		}
